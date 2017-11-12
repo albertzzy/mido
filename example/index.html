@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+         <h2>mido</h2>
+    </body>
+    <script src="http://localhost:9000/dev/mido.js"></script>
+    <script>
+        
+
+        var app = new App();
+
+        app.use(function(next){
+            console.log('1111111');
+            this.ass = 'ass';
+            return next();
+        })
+
+        app.use(function(next){
+            console.log(this.ass);
+            console.log('2222222');
+        })
+
+        app.run();
+
+    </script>
+</html>
